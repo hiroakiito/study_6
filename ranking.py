@@ -5,7 +5,11 @@ import pandas as pd
 import datetime
 
 def get_api(url):
-    result = requests.get(url)
+    param={"format":"json",
+           "applicationId":"1019079537947262807",
+           "age":"20",
+           "sex":"1"}
+    result = requests.get(url,param)
     return result.json()
 
 def make_csv(responses):
@@ -31,8 +35,7 @@ def make_csv(responses):
 def main():
     age= "20"
     sex = "1"
-    url = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20170628?format=json&age={}&sex={}&applicationId=1019079537947262807".format(
-        age, sex)
+    url = "https://app.rakuten.co.jp/services/api/IchibaItem/Ranking/20170628"
     responses = get_api(url)
     make_csv(responses)
 

@@ -16,5 +16,4 @@ def main():
         print('商品名：{}'.format(response['Item']['itemName']))
         print('価格：{}円'.format(response['Item']['itemPrice']))
 
-
 main()

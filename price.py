@@ -18,5 +18,4 @@ def main():
         print('最安価格：{}円'.format(response['Product']['minPrice']))
         print('最高価格：{}円'.format(response['Product']['maxPrice']))
 
-
 main()
